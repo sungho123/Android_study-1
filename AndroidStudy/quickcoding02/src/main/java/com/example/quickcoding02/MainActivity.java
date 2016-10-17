@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    //CaCul caculation = new CaCul();
     Random number = new Random();
     String inputText = new String();
     int i = 0;
