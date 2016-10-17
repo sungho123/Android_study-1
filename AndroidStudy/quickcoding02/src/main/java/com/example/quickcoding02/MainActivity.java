@@ -11,50 +11,50 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    //CaCul caculation = new CaCul();
+    Random number = new Random();
+    String inputText = new String();
+    int i = 0;
+    int max = 200;
+    int min = 1;
+    int ans = 0;
+
+    public void biggerClicked(View view) {
+        min = ans;
+        Random numB = new Random();
+        ans = numB.nextInt(max-min)+min+1;
+        ((TextView) findViewById(R.id.result)).setText("Your Number is "+ans);
+        i++;
     }
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void smallerClicked(View view) {
+        max = ans;
+        Random numS = new Random();
+        ans = numS.nextInt(max-min)+min+1;
+        ((TextView) findViewById(R.id.result)).setText("Your Number is "+ans);
+        i++;
     }
-    CaCul caculation = new CaCul();
-    String numbers = new String();
 
-    public void miniClicked(View view) {
+    public void sendClicked(View view) {
         EditText editT = (EditText)findViewById(R.id.editText);
-        //numbers=String.valueOf(((TextView)findViewById(R.id.myValue)).getText());
-        numbers = editT.getText().toString();
-        ((TextView) findViewById(R.id.result)).setText(caculation.minimum(numbers));
-    }
+        max = 200;
+        min = 1;
+        ans = number.nextInt(max+1)+min;
+        i=0;
+        ((TextView) findViewById(R.id.result)).setText("Your Number is "+ans);
+        inputText = editT.getText().toString();
 
-    public void averClicked(View view) {
-        EditText editT = (EditText)findViewById(R.id.editText);
-        numbers = editT.getText().toString();
-        //numbers = String.valueOf(((TextView)findViewById(R.id.myValue)).getText());
-        ((TextView) findViewById(R.id.result)).setText(caculation.average(numbers));
+    }
+    public void bingoClicked(View view) {
+        ((TextView) findViewById(R.id.result)).setText("Bingo! ("+i+") : " + ans);
     }
 }

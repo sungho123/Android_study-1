@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Current Values :"
+        android:text="What is Your Number?"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -26,62 +26,73 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Minimum"
-        android:id="@+id/minimum"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="74dp"
-        android:textSize="20dp"
-        android:onClick="miniClicked"
-        android:background="#001db0"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Average"
-        android:id="@+id/average"
-        android:onClick="averClicked"
-        android:textSize="20dp"
-        android:layout_alignTop="@+id/minimum"
-        android:layout_alignBottom="@+id/minimum"
-        android:layout_toRightOf="@+id/textView"
+        android:text="Send"
+        android:id="@+id/send"
+        android:onClick="sendClicked"
+        android:textSize="30dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="78dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#001db0"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="The Results : "
-        android:id="@+id/textView2"
-        android:layout_below="@+id/minimum"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp"
-        android:textSize="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Result"
-        android:id="@+id/result"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:textSize="30dp" />
+        android:width="150dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_toLeftOf="@+id/average"
+        android:layout_alignBottom="@+id/send"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
+        android:textSize="30dp"
+        android:width="200dp"
+        android:hint="Input" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Number is oo!!"
+        android:id="@+id/result"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="77dp"
         android:textSize="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bigger"
+        android:id="@+id/bigger"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/result"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"
+        android:width="180dp"
+        android:onClick="biggerClicked" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="smaller"
+        android:id="@+id/smaller"
+        android:layout_alignBottom="@+id/bigger"
+        android:layout_toEndOf="@+id/bigger"
+        android:textSize="30dp"
+        android:width="180dp"
+        android:layout_toRightOf="@+id/bigger"
+        android:onClick="smallerClicked" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bingo"
+        android:id="@+id/bingo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:width="180dp"
+        android:textSize="30dp"
+        android:onClick="bingoClicked" />
 </RelativeLayout>
